@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.List;
 import proyecto.progra.resources.data.AdminDao;
 import proyecto.progra.resources.data.ClienteDao;
-import proyecto.progra.resources.data.RelDatabase;
+import proyecto.progra.resources.data.DBConnection;
 import proyecto.progra.resources.data.UsuarioDao;
 
 /**
@@ -24,13 +24,13 @@ public class Service {
     }
     
     
-    RelDatabase relDatabase;
+    DBConnection relDatabase;
     UsuarioDao usuarioDao;
     ClienteDao clienteDao;
     AdminDao adminDao;
     
     private Service(){
-        relDatabase = new RelDatabase();
+        relDatabase = new DBConnection();
         usuarioDao = new UsuarioDao(relDatabase);
         clienteDao = new ClienteDao(relDatabase);
         adminDao = new AdminDao(relDatabase);
