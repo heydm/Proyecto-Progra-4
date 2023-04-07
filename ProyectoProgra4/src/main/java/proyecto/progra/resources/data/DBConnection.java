@@ -16,35 +16,48 @@ public class DBConnection {
  
     Connection cnx;
     public DBConnection(){
-        cnx=this.createConnection();            
+        cnx=this.getConnection();            
     }
     
-    public static Connection createConnection()
+    public static Connection getConnection()
     {
-    Connection con = null;
-    String url = "jdbc:mysql://localhost:3306/customers";
-    String username = "root";
-    String password = "root123";
- 
-    try
-    {
-        try
-        {
-            Class.forName("com.mysql.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        con = DriverManager.getConnection(url, username, password);
-        System.out.println("Post establishing a DB connection - "+con);
+    try {
+            String driver = "com.mysql.cj.jdbc.Driver";
+            String server = "localhost";
+            String port = "3306";
+            String user = "root";
+            String password = "root";
+            String database = "Guia";
+            
+            String URL_conexion="jdbc:mysql://"+ server+":"+port+"/"+database+"?user="+user+"&password="+
+                    password+"&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+            Class.forName(driver).newInstance();
+            return DriverManager.getConnection(URL_conexion);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            System.exit(-1);
+        } 
+        return null;
     }
-    catch (SQLException e)
-        {
-           System.out.println("An error occurred. Maybe user/password is invalid");
-         e.printStackTrace();
-       }
-    return con;
+    
+    public PreparedStatement prepareStatement(String statement) throws SQLException {
+        return cnx.prepareStatement(statement);
+    }
+    
+    public int executeUpdate(PreparedStatement statement) {
+        try {
+            statement.executeUpdate();
+            return statement.getUpdateCount();
+        } catch (SQLException ex) {
+            return 0;
+        }
+    }
+    public ResultSet executeQuery(PreparedStatement statement){
+        try {
+            return statement.executeQuery();
+        } catch (SQLException ex) {
+        }
+        return null;
     }
     
     public int executeUpdateWithKeys(String statement) {
@@ -57,17 +70,5 @@ public class DBConnection {
         } catch (SQLException ex) {
             return -1;
         }
-    }
-    
-    public PreparedStatement prepareStatement(String statement) throws SQLException {
-        return cnx.prepareStatement(statement);
-    }
-    
-    public ResultSet executeQuery(PreparedStatement statement){
-        try {
-            return statement.executeQuery();
-        } catch (SQLException ex) {
-        }
-        return null;
-    }
+    }    
 }

@@ -27,7 +27,7 @@ public String authenticateUser(LoginBean loginBean)
  
     try
     {
-        con = DBConnection.createConnection();
+        con = DBConnection.getConnection();
         statement = con.createStatement();
         resultSet = statement.executeQuery("select username,password,role from users");
  

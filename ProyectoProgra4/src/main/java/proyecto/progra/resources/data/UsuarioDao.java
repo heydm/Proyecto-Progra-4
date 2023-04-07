@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import proyecto.progra.resources.logic.Usuario;
 
 public class UsuarioDao {
-    RelDatabase db;
+    DBConnection db;
 
-    public UsuarioDao(RelDatabase db){
+    public UsuarioDao(DBConnection db){
         this.db= db;
     }
     

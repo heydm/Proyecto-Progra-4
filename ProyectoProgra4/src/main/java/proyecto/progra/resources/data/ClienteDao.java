@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import proyecto.progra.resources.logic.Cliente;
 
 public class ClienteDao {
-    RelDatabase db;
+    DBConnection db;
 
-    public ClienteDao(RelDatabase db){
+    public ClienteDao(DBConnection db){
         this.db= db;
     }    
     

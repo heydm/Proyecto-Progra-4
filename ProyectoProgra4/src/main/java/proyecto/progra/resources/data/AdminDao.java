@@ -14,9 +14,9 @@ import proyecto.progra.resources.logic.Admin;
  * @author joas2
  */
 public class AdminDao {
-    RelDatabase db;
+    DBConnection db;
 
-    public AdminDao(RelDatabase db){
+    public AdminDao(DBConnection db){
         this.db= db;
     }    
     
@@ -58,9 +58,11 @@ public class AdminDao {
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, e.getNombre());
         stm.setString(2, e.getCedula());
-        int count = db.executeUpdate(stm);
+        /*int count = db.executeQuery(stm);
         if (count == 0) {
             throw new Exception("Admin no existe");
-        }
+        }*/
+        
+        // TODO arrreglar esto
     } 
 }
