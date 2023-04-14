@@ -3,7 +3,7 @@
 
 <header>
     <div class="logo">
-        <span>Banco Santander</span>
+        <span>Seguros DEJ</span>
         <img src="images/logo.png">
     </div> 
     <div class="menu">
