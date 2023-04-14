@@ -8,6 +8,9 @@ package com.progra.guia.presentation.cliente.polizas;
 import com.progra.guia.logic.Cliente;
 import com.progra.guia.logic.Service;
 import com.progra.guia.logic.Usuario;
+
+import com.progra.guia.presentation.cliente.polizas.Model;
+
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,7 +20,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
+
 @WebServlet(name = "ClientePolizasController", urlPatterns = {"/presentation/cliente/polizas/show"})
+
 public class Controller extends HttpServlet {
     
   protected void processRequest(HttpServletRequest request, 
@@ -28,7 +33,9 @@ public class Controller extends HttpServlet {
         
         String viewUrl="";     
         switch (request.getServletPath()) {
+
           case "/presentation/cliente/polizas/show":
+
               viewUrl = this.show(request);
               break;
         }          
@@ -52,8 +59,10 @@ public class Controller extends HttpServlet {
             cliente=null;
         }
         try {        
+
             model.setPolizas(service.polizasFind(cliente));
             return "/presentation/cliente/polizas/View.jsp";
+
         } catch (Exception ex) {
             return "";
         }

@@ -13,7 +13,9 @@
 <html>
 <head>
  <%@ include file="/presentation/Head.jsp" %>
+
  <title>Polizas</title> 
+
 </head>
 <body >
     <%@ include file="/presentation/Header.jsp" %>
@@ -23,6 +25,7 @@
     
         <table>
             <thead>
+
                 <tr> <td>Número</td> <td>Placa</td> <td>Fecha</td> </tr>
             </thead>
             <tbody>
@@ -33,6 +36,7 @@
                                     <input type="hidden" name="numeroFld" value="<%=p.getNumero()%>"> 
                                     <button class="link-button"> <%=p.getNumero()%> </button> </form> </td>  
                             <td><%=p.getPlaca()%></td> <td><%=p.getFecha()%></td></tr>  -->              
+
                         <%}%>
             </tbody>
         </table>          

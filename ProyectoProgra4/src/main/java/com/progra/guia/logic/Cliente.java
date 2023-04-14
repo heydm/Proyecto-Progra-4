@@ -17,7 +17,7 @@ public class Cliente {
     String cedula;
     String nombre;
     Usuario usuario;
-    List<Poliza> cuentas;
+    List<Poliza> polizas;
 
     public Cliente() {
         this("","",new Usuario());
@@ -27,7 +27,7 @@ public class Cliente {
         this.cedula = cedula;
         this.nombre = nombre;
         this.usuario = usuario;
-        this.cuentas = new ArrayList();
+        this.polizas = new ArrayList();
     }
 
     
@@ -55,12 +55,12 @@ public class Cliente {
         this.usuario = usuario;
     }
 
-    public List<Poliza> getCuentas() {
-        return cuentas;
+    public List<Poliza> getPolizas() {
+        return polizas;
     }
 
-    public void setCuentas(List<Poliza> cuentas) {
-        this.cuentas = cuentas;
+    public void setPolizas(List<Poliza> polizas) {
+        this.polizas = polizas;
     }
 
     @Override

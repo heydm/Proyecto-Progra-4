@@ -5,7 +5,9 @@
 <%@page import="java.util.ArrayList"%>
 <%
     Model model = (Model) request.getAttribute("model");
+
     Poliza poliza = model.getCurrent();
+
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,7 +26,7 @@
               <div class="campo"><%=poliza.getNumero()%></div>
         </div>
         <div class="fila">
-            
+
           <div class="etiqueta">Placa</div>
           <div class="campo"><%=poliza.getPlaca()%></div>
         </div>
@@ -32,7 +34,7 @@
           <div class="etiqueta">Fecha</div>
           <div class="campo"><%=poliza.getFecha()%></div>
         </div>
- 
+
     </div>     
      <%@ include file="/presentation/Footer.jsp" %>
 </body>
