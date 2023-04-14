@@ -29,6 +29,7 @@ public class Service {
     UsuarioDao usuarioDao;
     ClienteDao clienteDao;
     PolizaDao cuentaDao;
+    MarcaDao marcaDao;
     
 //    HashMap<String,Usuario> usuarios;
 //    HashMap<String,Cliente> clientes;
@@ -86,4 +87,8 @@ public class Service {
     public Poliza cuentaFind(String numero) throws Exception{
         return cuentaDao.read(numero);
     }    
+    
+    public void marcaCreate(Marca marca) throws Exception {
+        marcaDao.create(marca);
+    }
 }
