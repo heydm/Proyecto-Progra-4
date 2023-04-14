@@ -75,7 +75,7 @@ public class Service {
         return clienteDao.read(usuario.getCedula());
     }
     
-    public List<Poliza> cuentasFind(Cliente cliente) throws Exception{
+    public List<Poliza> polizasFind(Cliente cliente) throws Exception{
         List<Poliza> cuentas = cuentaDao.findByCliente(cliente);
         for(Poliza e:cuentas) e.setCliente(cliente);
         cliente.setCuentas(cuentas);

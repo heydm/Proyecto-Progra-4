@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.progra.guia.presentation.cliente.cuentas;
+package com.progra.guia.presentation.cliente.polizas;
 
 import com.progra.guia.logic.Cliente;
 import com.progra.guia.logic.Service;
@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(name = "ClienteCuentasController", urlPatterns = {"/presentation/cliente/cuentas/show"})
+@WebServlet(name = "ClientePolizasController", urlPatterns = {"/presentation/cliente/polizas/show"})
 public class Controller extends HttpServlet {
     
   protected void processRequest(HttpServletRequest request, 
@@ -28,7 +28,7 @@ public class Controller extends HttpServlet {
         
         String viewUrl="";     
         switch (request.getServletPath()) {
-          case "/presentation/cliente/cuentas/show":
+          case "/presentation/cliente/polizas/show":
               viewUrl = this.show(request);
               break;
         }          
@@ -52,8 +52,8 @@ public class Controller extends HttpServlet {
             cliente=null;
         }
         try {        
-            model.setCuentas(service.polizasFind(cliente));
-            return "/presentation/cliente/cuentas/View.jsp";
+            model.setPolizas(service.polizasFind(cliente));
+            return "/presentation/cliente/polizas/View.jsp";
         } catch (Exception ex) {
             return "";
         }
