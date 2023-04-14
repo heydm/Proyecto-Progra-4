@@ -6,6 +6,7 @@
 package com.progra.guia.logic;
 
 import com.progra.guia.data.ClienteDao;
+import com.progra.guia.data.MarcaDao;
 import com.progra.guia.data.PolizaDao;
 import com.progra.guia.data.RelDatabase;
 import com.progra.guia.data.UsuarioDao;
@@ -42,6 +43,7 @@ public class Service {
         usuarioDao = new UsuarioDao(relDatabase);
         clienteDao = new ClienteDao(relDatabase);
         cuentaDao = new PolizaDao(relDatabase);
+        marcaDao = new MarcaDao(relDatabase);
         
 //        usuarios = new HashMap();
 //        usuarios.put("111", new Usuario("111","111",1));
