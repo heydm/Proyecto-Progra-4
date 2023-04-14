@@ -8,23 +8,33 @@ package com.progra.guia.logic;
 import java.util.Objects;
 
 public class Poliza {
+    
     String numero;
-    String placa;
     String fecha;
-    Modelo modelo;
+    Auto auto;
     Cliente cliente;
 
     public Poliza() {
 
-        this("","","",new Modelo(),new Cliente());
+        this("","",new Auto(),new Cliente());
 
     }
 
-    public Poliza(String numero, String placa, String fecha, Modelo modelo, Cliente cliente) {
+    public Poliza(String numero,String fecha, Auto auto, Cliente cliente) {
         this.numero = numero;
-        this.placa = placa;
         this.fecha = fecha;
-        this.modelo = modelo;
+        this.auto = auto;
+        this.cliente = cliente;
+         
+    }
+
+    
+   
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
@@ -36,38 +46,20 @@ public class Poliza {
         this.numero = numero;
     }
 
-    public String getPlaca() {
-        return placa;
+    public Auto getAuto() {
+        return auto;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setAuto(Auto auto) {
+        this.auto = auto;
     }
-
-    public String getFecha() {
+ public String getFecha() {
         return fecha;
     }
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-
-    public Modelo getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(Modelo modelo) {
-        this.modelo = modelo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
    
 
     

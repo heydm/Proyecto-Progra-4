@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.progra.guia.presentation.cliente.poliza;
+package com.progra.presentation.cliente.datos;
 
-import com.progra.guia.logic.Poliza;
-
+import com.progra.guia.logic.Cliente;
+import com.progra.guia.logic.Usuario;
 
 
 /**
@@ -14,18 +14,20 @@ import com.progra.guia.logic.Poliza;
  * @author Escinf
  */
 public class Model{
-    Poliza current;
+    Cliente current;
 
     public Model() {
-        current = new Poliza("","",null,null);
+        this.current = new Cliente("","",new Usuario("","",1));
     }
 
-    public Poliza getCurrent() {
+    
+    public Cliente getCurrent() {
         return current;
     }
 
-    public void setCurrent(Poliza current) {
+    public void setCurrent(Cliente current) {
         this.current = current;
     }
-
+    
+    
 }

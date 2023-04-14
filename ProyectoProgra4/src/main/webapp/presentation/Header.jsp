@@ -3,8 +3,9 @@
 
 <header>
     <div class="logo">
+         <img src="images/logo.png" style=" height: 100px;">
         <span>Seguros DEJ</span>
-        <img src="images/logo.png">
+       
     </div> 
     <div class="menu">
         <ul> 
@@ -13,21 +14,21 @@
               </li>
                         <% if (usuario!=null){ %>
                 <li>
-                  <a href="presentation/cliente/cuentas/show">Cuentas</a>
+                  <a href="presentation/cliente/cuentas/show">Polizas</a>
                   <ul>  <!--submenu --> </ul>
                 </li>                        
                 <li >
-                  <a  href="presentation/cliente/datos/show">User:<%=usuario.getCedula()%></a>
+                  <a  href="presentation/cliente/datos/show">Usuario:  <%=usuario.getCedula()%></a>
                   <ul>  <!--submenu --> </ul>
                 </li> 
                 <li >
-                  <a  href="presentation/login/logout">Logout</a>
+                  <a  href="presentation/login/logout">Cerrar sesión</a>
                   <ul>  <!--submenu --> </ul>
                 </li>                
                         <% } %>
                         <% if (usuario==null){%>
                 <li>
-                  <a href="presentation/login/show">Login</a>
+                  <a href="presentation/login/show">Iniciar sesión</a>
                 </li>
                 
                         <% }%>             

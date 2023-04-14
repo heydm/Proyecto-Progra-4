@@ -25,7 +25,7 @@
                       <div class="campo"><input class="<%=erroneo("cedulaFld",errores)%>" placeholder="Cedula del usuario" type="text" name="cedulaFld" value="<%=form.get("cedulaFld")[0]%>" title="<%=title("cedulaFld",errores)%>"></div>
                 </div>
                 <div class="fila">
-                  <div class="etiqueta">Clave</div>
+                  <div class="etiqueta">Contraseña</div>
                   <div class="campo"><input class="<%=erroneo("claveFld",errores)%>" placeholder="Clave del usuario" type="password" name="claveFld" value="<%=form.get("claveFld")[0]%>" title="<%=title("claveFld",errores)%>"></div>
                 </div>
                 <div class="fila encabezado"><button  style="margin-bottom: 15px">Ingresar</button> </div>

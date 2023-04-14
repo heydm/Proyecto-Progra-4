@@ -25,7 +25,7 @@ public class PolizaDao {
     public Poliza read(String numero) throws Exception {
         String sql = "select " +
                 "* " +
-                "from Cuenta e inner join Cliente c on e.cliente=c.cedula " +
+                "from Poliza e inner join Cliente c on e.cliente=c.cedula " +
                 "where e.numero=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, numero);
@@ -37,7 +37,7 @@ public class PolizaDao {
             c.setCliente(clienteDao.from(rs, "c"));
             return c;
         } else {
-            throw new Exception("Cuenta no Existe");
+            throw new Exception("Poliza no Existe");
         }
     }
 
@@ -46,7 +46,7 @@ public class PolizaDao {
         try {
             String sql = "select * " +
                     "from " +
-                    "Cuenta e " +
+                    "Poliza e " +
                     "where e.cliente=?";
             PreparedStatement stm = db.prepareStatement(sql);
             stm.setString(1, cliente.getCedula());
@@ -63,8 +63,7 @@ public class PolizaDao {
         try {
             Poliza e = new Poliza();
             e.setNumero(rs.getString(alias + ".numero"));
-            e.setPlaca(rs.getString(alias + ".saldo"));
-            e.setFecha(rs.getString(alias + ".saldo"));
+            e.setFecha(rs.getString(alias + ".fecha"));
             return e;
         } catch (SQLException ex) {
             return null;
