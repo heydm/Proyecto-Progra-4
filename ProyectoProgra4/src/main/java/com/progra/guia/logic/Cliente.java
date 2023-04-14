@@ -17,7 +17,7 @@ public class Cliente {
     String cedula;
     String nombre;
     Usuario usuario;
-    List<Cuenta> cuentas;
+    List<Poliza> cuentas;
 
     public Cliente() {
         this("","",new Usuario());
@@ -55,11 +55,11 @@ public class Cliente {
         this.usuario = usuario;
     }
 
-    public List<Cuenta> getCuentas() {
+    public List<Poliza> getCuentas() {
         return cuentas;
     }
 
-    public void setCuentas(List<Cuenta> cuentas) {
+    public void setCuentas(List<Poliza> cuentas) {
         this.cuentas = cuentas;
     }
 

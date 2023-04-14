@@ -5,7 +5,7 @@
  */
 package com.progra.guia.presentation.cliente.cuentas;
 
-import com.progra.guia.logic.Cuenta;
+import com.progra.guia.logic.Poliza;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,32 +14,32 @@ import java.util.List;
  * @author Escinf
  */
 public class Model{
-    List<Cuenta> cuentas;
-    Cuenta seleccionado;
+    List<Poliza> cuentas;
+    Poliza seleccionado;
 
     public Model() {
         this.reset();
     }
 
     public void reset(){ 
-        List<Cuenta> rows = new ArrayList<>();        
+        List<Poliza> rows = new ArrayList<>();        
         seleccionado=null;  
         this.setCuentas(rows);
     }
     
-    public void setCuentas(List<Cuenta> cuentas){
+    public void setCuentas(List<Poliza> cuentas){
         this.cuentas =cuentas;    
     }
 
-     public List<Cuenta> getCuentas() {
+     public List<Poliza> getCuentas() {
         return cuentas;
     }
 
-    public Cuenta getSeleccionado() {
+    public Poliza getSeleccionado() {
         return seleccionado;
     }
 
-    public void setSeleccionado(Cuenta seleccionado) {
+    public void setSeleccionado(Poliza seleccionado) {
         this.seleccionado = seleccionado;
     }
 }

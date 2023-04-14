@@ -7,24 +7,25 @@ package com.progra.guia.logic;
 
 import java.util.Objects;
 
-/**
- *
- * @author Escinf
- */
-public class Cuenta {
+public class Poliza {
     String numero;
-    double saldo;
+    String placa;
+    String fecha;
+    Modelo modelo;
     Cliente cliente;
 
-    public Cuenta() {
-        this("",0,new Cliente());
+    public Poliza() {
+
+        this("","","",new Modelo(),new Cliente());
+
     }
 
-    
-    public Cuenta(String numero, double saldo,Cliente cliente) {
+    public Poliza(String numero, String placa, String fecha, Modelo modelo, Cliente cliente) {
         this.numero = numero;
-        this.saldo = saldo;
-        this.cliente= cliente;
+        this.placa = placa;
+        this.fecha = fecha;
+        this.modelo = modelo;
+        this.cliente = cliente;
     }
 
     public String getNumero() {
@@ -35,12 +36,28 @@ public class Cuenta {
         this.numero = numero;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public String getPlaca() {
+        return placa;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
     }
 
     public Cliente getCliente() {
@@ -50,6 +67,12 @@ public class Cuenta {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+   
+
+    
+   
+
 
     @Override
     public boolean equals(Object obj) {
@@ -62,7 +85,7 @@ public class Cuenta {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Cuenta other = (Cuenta) obj;
+        final Poliza other = (Poliza) obj;
         if (!Objects.equals(this.numero, other.numero)) {
             return false;
         }

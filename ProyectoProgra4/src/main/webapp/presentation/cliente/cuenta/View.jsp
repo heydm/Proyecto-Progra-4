@@ -12,13 +12,13 @@
 <html>
 <head>
  <%@ include file="/presentation/Head.jsp" %>
- <title>Cuenta</title> 
+ <title>Poliza</title> 
 </head>
 <body >
 <%@ include file="/presentation/Header.jsp" %>
 
     <div class="panel" style="width:50%;">
-        <div class="fila encabezado">Cuenta</div>
+        <div class="fila encabezado">Poliza</div>
         <div class="fila">
                <div class="etiqueta">Numermo</div>
               <div class="campo"><%=cuenta.getNumero()%></div>

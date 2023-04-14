@@ -5,7 +5,7 @@
 package com.progra.guia.data;
 
 import com.progra.guia.logic.Cliente;
-import com.progra.guia.logic.Cuenta;
+import com.progra.guia.logic.Poliza;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,13 +16,13 @@ import java.util.List;
  *
  * @author ESCINF
  */
-public class CuentaDao {
+public class PolizaDao {
     RelDatabase db;
 
-    public CuentaDao(RelDatabase db){
+    public PolizaDao(RelDatabase db){
         this.db= db;
     }
-    public Cuenta read(String numero) throws Exception {
+    public Poliza read(String numero) throws Exception {
         String sql = "select " +
                 "* " +
                 "from Cuenta e inner join Cliente c on e.cliente=c.cedula " +
@@ -31,7 +31,7 @@ public class CuentaDao {
         stm.setString(1, numero);
         ResultSet rs = db.executeQuery(stm);
         ClienteDao clienteDao = new ClienteDao(db);
-        Cuenta c;
+        Poliza c;
         if (rs.next()) {
             c = from(rs, "e");
             c.setCliente(clienteDao.from(rs, "c"));
@@ -41,8 +41,8 @@ public class CuentaDao {
         }
     }
 
-    public List<Cuenta> findByCliente(Cliente cliente) {
-        List<Cuenta> resultado = new ArrayList<>();
+    public List<Poliza> findByCliente(Cliente cliente) {
+        List<Poliza> resultado = new ArrayList<>();
         try {
             String sql = "select * " +
                     "from " +
@@ -59,11 +59,12 @@ public class CuentaDao {
         return resultado;
     }
     
-    private Cuenta from(ResultSet rs, String alias) {
+    private Poliza from(ResultSet rs, String alias) {
         try {
-            Cuenta e = new Cuenta();
+            Poliza e = new Poliza();
             e.setNumero(rs.getString(alias + ".numero"));
-            e.setSaldo(rs.getDouble(alias + ".saldo"));
+            e.setPlaca(rs.getString(alias + ".saldo"));
+            e.setFecha(rs.getString(alias + ".saldo"));
             return e;
         } catch (SQLException ex) {
             return null;

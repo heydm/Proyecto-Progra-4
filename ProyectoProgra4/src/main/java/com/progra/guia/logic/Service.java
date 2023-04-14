@@ -6,7 +6,7 @@
 package com.progra.guia.logic;
 
 import com.progra.guia.data.ClienteDao;
-import com.progra.guia.data.CuentaDao;
+import com.progra.guia.data.PolizaDao;
 import com.progra.guia.data.RelDatabase;
 import com.progra.guia.data.UsuarioDao;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class Service {
     RelDatabase relDatabase;
     UsuarioDao usuarioDao;
     ClienteDao clienteDao;
-    CuentaDao cuentaDao;
+    PolizaDao cuentaDao;
     
 //    HashMap<String,Usuario> usuarios;
 //    HashMap<String,Cliente> clientes;
@@ -40,7 +40,7 @@ public class Service {
         relDatabase = new RelDatabase();
         usuarioDao = new UsuarioDao(relDatabase);
         clienteDao = new ClienteDao(relDatabase);
-        cuentaDao = new CuentaDao(relDatabase);
+        cuentaDao = new PolizaDao(relDatabase);
         
 //        usuarios = new HashMap();
 //        usuarios.put("111", new Usuario("111","111",1));
@@ -72,9 +72,9 @@ public class Service {
         return clienteDao.read(usuario.getCedula());
     }
     
-    public List<Cuenta> cuentasFind(Cliente cliente) throws Exception{
-        List<Cuenta> cuentas = cuentaDao.findByCliente(cliente);
-        for(Cuenta e:cuentas) e.setCliente(cliente);
+    public List<Poliza> cuentasFind(Cliente cliente) throws Exception{
+        List<Poliza> cuentas = cuentaDao.findByCliente(cliente);
+        for(Poliza e:cuentas) e.setCliente(cliente);
         cliente.setCuentas(cuentas);
         return cuentas;
     }
@@ -83,7 +83,7 @@ public class Service {
         clienteDao.update(cliente);
     }
     
-    public Cuenta cuentaFind(String numero) throws Exception{
+    public Poliza cuentaFind(String numero) throws Exception{
         return cuentaDao.read(numero);
     }    
 }
