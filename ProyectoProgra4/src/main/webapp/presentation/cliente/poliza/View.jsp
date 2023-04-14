@@ -1,6 +1,6 @@
 
-<%@page import="com.progra.guia.logic.Cuenta"%>
-<%@page import="com.progra.guia.presentation.cliente.cuenta.Model"%>
+<%@page import="com.progra.guia.logic.Poliza"%>
+<%@page import="com.progra.guia.presentation.cliente.poliza.Model"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%
@@ -20,12 +20,16 @@
     <div class="panel" style="width:50%;">
         <div class="fila encabezado">Poliza</div>
         <div class="fila">
-               <div class="etiqueta">Numermo</div>
-              <div class="campo"><%=cuenta.getNumero()%></div>
+               <div class="etiqueta">Número</div>
+              <div class="campo"><%=poliza.getNumero()%></div>
         </div>
         <div class="fila">
-          <div class="etiqueta">Saldo</div>
-          <div class="campo"><%=cuenta.getSaldo()%></div>
+          <div class="etiqueta">Placa</div>
+          <div class="campo"><%=poliza.getPlaca()%></div>
+        </div>
+        <div class="fila">
+          <div class="etiqueta">Fecha</div>
+          <div class="campo"><%=poliza.getFecha()%></div>
         </div>
     </div>     
      <%@ include file="/presentation/Footer.jsp" %>

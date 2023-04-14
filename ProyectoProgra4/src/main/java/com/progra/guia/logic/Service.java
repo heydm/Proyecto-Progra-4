@@ -29,7 +29,7 @@ public class Service {
     RelDatabase relDatabase;
     UsuarioDao usuarioDao;
     ClienteDao clienteDao;
-    PolizaDao cuentaDao;
+    PolizaDao polizaDao;
     MarcaDao marcaDao;
     
 //    HashMap<String,Usuario> usuarios;
@@ -42,7 +42,7 @@ public class Service {
         relDatabase = new RelDatabase();
         usuarioDao = new UsuarioDao(relDatabase);
         clienteDao = new ClienteDao(relDatabase);
-        cuentaDao = new PolizaDao(relDatabase);
+        polizaDao = new PolizaDao(relDatabase);
         marcaDao = new MarcaDao(relDatabase);
         
 //        usuarios = new HashMap();
@@ -75,10 +75,10 @@ public class Service {
         return clienteDao.read(usuario.getCedula());
     }
     
-    public List<Poliza> cuentasFind(Cliente cliente) throws Exception{
-        List<Poliza> cuentas = cuentaDao.findByCliente(cliente);
+    public List<Poliza> polizasFind(Cliente cliente) throws Exception{
+        List<Poliza> cuentas = polizaDao.findByCliente(cliente);
         for(Poliza e:cuentas) e.setCliente(cliente);
-        cliente.setCuentas(cuentas);
+        cliente.setPolizas(cuentas);
         return cuentas;
     }
 
@@ -87,7 +87,7 @@ public class Service {
     }
     
     public Poliza cuentaFind(String numero) throws Exception{
-        return cuentaDao.read(numero);
+        return polizaDao.read(numero);
     }    
     
     public void marcaCreate(Marca marca) throws Exception {

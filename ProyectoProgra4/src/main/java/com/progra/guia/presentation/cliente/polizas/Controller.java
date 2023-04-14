@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.progra.guia.presentation.cliente.cuentas;
+package com.progra.guia.presentation.cliente.polizas;
 
 import com.progra.guia.logic.Cliente;
 import com.progra.guia.logic.Service;
 import com.progra.guia.logic.Usuario;
+import com.progra.guia.presentation.cliente.polizas.Model;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -52,7 +53,7 @@ public class Controller extends HttpServlet {
             cliente=null;
         }
         try {        
-            model.setCuentas(service.cuentasFind(cliente));
+            model.setPolizas(service.polizasFind(cliente));
             return "/presentation/cliente/cuentas/View.jsp";
         } catch (Exception ex) {
             return "";

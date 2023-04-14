@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.progra.guia.presentation.cliente.cuentas;
+package com.progra.guia.presentation.cliente.polizas;
 
 import com.progra.guia.logic.Poliza;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.List;
  * @author Escinf
  */
 public class Model{
-    List<Poliza> cuentas;
+    List<Poliza> polizas;
     Poliza seleccionado;
 
     public Model() {
@@ -24,15 +24,15 @@ public class Model{
     public void reset(){ 
         List<Poliza> rows = new ArrayList<>();        
         seleccionado=null;  
-        this.setCuentas(rows);
+        this.setPolizas(rows);
     }
     
-    public void setCuentas(List<Poliza> cuentas){
-        this.cuentas =cuentas;    
+    public void setPolizas(List<Poliza> polizas){
+        this.polizas =polizas;    
     }
 
-     public List<Poliza> getCuentas() {
-        return cuentas;
+     public List<Poliza> getPolizas() {
+        return polizas;
     }
 
     public Poliza getSeleccionado() {
