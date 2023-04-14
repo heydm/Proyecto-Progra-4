@@ -73,7 +73,7 @@ public class Controller extends HttpServlet {
         HttpSession session = request.getSession(true);
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         try {        
-            model.setCurrent(service.cuentaFind(model.getCurrent().getNumero()));
+            model.setCurrent(service.polizaFind(model.getCurrent().getNumero()));
             if (!(model.getCurrent().getCliente().getCedula().equals(usuario.getCedula()))) 
                 throw new Exception("Cuenta no pertenece al cliente");
             return "/presentation/cliente/cuenta/View.jsp";
