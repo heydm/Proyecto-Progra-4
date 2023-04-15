@@ -25,7 +25,7 @@ public class PolizaDao {
     public Poliza read(String numero) throws Exception {
         String sql = "select " +
                 "* " +
-                "from Poliza e inner join Cliente c on e.cliente=c.cedula " +
+                "from Poliza e " +
                 "where e.numero=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, numero);
@@ -39,6 +39,21 @@ public class PolizaDao {
         } else {
             throw new Exception("Poliza no Existe");
         }
+    }
+     public void create(Poliza e) throws Exception {
+        String sql = "insert into Poliza (campo1, campo2,campo3,campo4,campo5,campo6,campo7) VALUES (?,?,?,?,?,?,?)";
+        PreparedStatement stm = db.prepareStatement(sql);
+        stm.setString(1, String.valueOf(e.getNumero()));
+        stm.setString(2, e.getPlaca());
+        stm.setString(3, e.getFecha());
+        stm.setDouble(4, e.getSaldo());
+        stm.setString(5, e.getCobertura());
+        //stm.setString(6, e.getMarca());
+       // stm.setstring(7, e.getCliente());
+
+        
+  
+        db.executeQuery(stm);
     }
 
     public List<Poliza> findByCliente(Cliente cliente) {
@@ -63,7 +78,11 @@ public class PolizaDao {
         try {
             Poliza e = new Poliza();
             e.setNumero(rs.getString(alias + ".numero"));
+            e.setPlaca(rs.getString(alias + ".placa"));
             e.setFecha(rs.getString(alias + ".fecha"));
+            e.setSaldo(rs.getDouble(alias + ".saldo"));
+            e.setCobertura(rs.getString(alias + ".cobertura"));
+            
             return e;
         } catch (SQLException ex) {
             return null;

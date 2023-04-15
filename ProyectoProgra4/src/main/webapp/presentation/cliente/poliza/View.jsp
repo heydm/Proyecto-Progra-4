@@ -14,28 +14,29 @@
 <html>
 <head>
  <%@ include file="/presentation/Head.jsp" %>
- <title>Poliza</title> 
+ <title>Agregar Poliza</title> 
 </head>
 <body >
 <%@ include file="/presentation/Header.jsp" %>
 
-    <div class="panel" style="width:50%;">
-        <div class="fila encabezado">Poliza</div>
-        <div class="fila">
-               <div class="etiqueta">Número</div>
-              <div class="campo"><%=poliza.getNumero()%></div>
-        </div>
-        <div class="fila">
-
-          <div class="etiqueta">Placa</div>
-          <div class="campo"><%=poliza.getPlaca()%></div>
-        </div>
-        <div class="fila">
-          <div class="etiqueta">Fecha</div>
-          <div class="campo"><%=poliza.getFecha()%></div>
-        </div>
-
-    </div>     
+     <h1>Agregar Auto</h1>
+    <form action="presentation/administrador/modelo/ add" method="post" enctype="multipart/form-data">
+        
+        <label>Placa:</label>
+        <input type="text" name="id" required><br>
+        <label>Marca:</label>
+        
+        <select name="example">
+            <%
+                 if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            echo '<option value="' . $row["id"] . '">' . $row["marca"] . '</option>';
+          }
+        }
+            %>
+        </select>
+            </form>
+  
      <%@ include file="/presentation/Footer.jsp" %>
 </body>
 </html>

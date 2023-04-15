@@ -9,21 +9,28 @@ import java.util.Objects;
 
 public class Poliza {
     
-    String numero;
+    String numero; 
+    String placa;
+    
     String fecha;
-    Auto auto;
+    double saldo;
+    String cobertura;
+    Marca marca;
     Cliente cliente;
 
     public Poliza() {
 
-        this("","",new Auto(),new Cliente());
+        this("","","",0.0,"",new Marca(),new Cliente());
 
     }
 
-    public Poliza(String numero,String fecha, Auto auto, Cliente cliente) {
+    public Poliza(String numero,String placa,String fecha,Double saldo,String cobertura, Marca marca, Cliente cliente) {
         this.numero = numero;
+        this.placa = placa;
         this.fecha = fecha;
-        this.auto = auto;
+        this.saldo = saldo;
+        this.cobertura = cobertura;
+        this.marca = marca;
         this.cliente = cliente;
          
     }
@@ -46,19 +53,45 @@ public class Poliza {
         this.numero = numero;
     }
 
-    public Auto getAuto() {
-        return auto;
-    }
 
-    public void setAuto(Auto auto) {
-        this.auto = auto;
-    }
  public String getFecha() {
         return fecha;
     }
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public String getCobertura() {
+        return cobertura;
+    }
+
+    public void setCobertura(String cobertura) {
+        this.cobertura = cobertura;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
     }
    
 

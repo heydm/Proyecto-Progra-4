@@ -17,7 +17,7 @@ public class Model{
     Poliza current;
 
     public Model() {
-        current = new Poliza("","",null,null);
+        current = new Poliza("","","",0.0,"",null,null);
     }
 
     public Poliza getCurrent() {
