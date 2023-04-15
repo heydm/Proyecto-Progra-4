@@ -1,5 +1,5 @@
 header{
-    background-color: rgb(42, 47, 53);
+    background-color: rgb(67, 230, 240);
     padding-bottom: 5px;
 }
 
@@ -8,8 +8,8 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(42, 47, 53);
-  color: rgb(255, 105, 45);
+  background-color: rgb(67, 230, 240);
+  color: black;
   text-align: center;
 }
 
@@ -22,7 +22,7 @@ footer {
 .logo>span{
     font-family:  cursive; 
     font-size: 2em;
-    color: rgb(255, 105, 45)
+    color: white;
 }
 
 body{
@@ -46,7 +46,7 @@ tr:hover {background-color:#f5f5f5;}
 
 .panel{width:100%;margin: auto; margin-top: 5px; border: 3px solid gray;  padding: 10px;}
 .fila{width:100%}
-.encabezado{background-color: black; color:rgb(255, 105, 45); text-align:center; font-size: 1.5em;}
+.encabezado{background-color:#43E6F0; color:rgb(255, 105, 45); text-align:center; font-size: 1.5em;}
 .etiqueta{width:20%;display:inline-block}
 .campo{width:60%;padding: 5px;display:inline-block}
 
