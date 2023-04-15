@@ -3,7 +3,7 @@
 
 <header>
     <div class="logo">
-         <img src="images/logo.png" style=" height: 100px;">
+         <img src="images/carroLogo.png" style=" height: 100px;">
         <span>Seguros DEJ</span>
        
     </div> 
