@@ -1,5 +1,5 @@
 header{
-    background-color: rgb(67, 230, 240);
+    background-color: rgb(42, 47, 53);
     padding-bottom: 5px;
 }
 
@@ -8,7 +8,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(67, 230, 240);
+  background-color: rgb(42, 47, 53);
   color: black;
   text-align: center;
 }
@@ -26,7 +26,7 @@ footer {
 }
 
 body{
-    background:  url(../images/background.jpg);
+    background:  url(../images/fondoPastel.jpg);
     background-position:  center;
     background-size: cover;
 }
