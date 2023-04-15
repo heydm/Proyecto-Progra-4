@@ -6,14 +6,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.progra.guia.logic.Cuenta"%>
-<%@page import="com.progra.guia.presentation.marca.Model"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%
-    Model model = (Model) request.getAttribute("model");
-    Marca marca = model.getCurrent();
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +16,7 @@
 </head>
 <body>
     <h1>Agregar marca</h1>
-    <form method="post" action="add">
+    <form method="post" action="AddServlet">
         <label>ID:</label>
         <input type="text" name="id" required><br>
         <label>Nombre:</label>

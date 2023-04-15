@@ -95,4 +95,8 @@ public class Service {
     public void marcaCreate(Marca marca) throws Exception {
         marcaDao.create(marca);
     }
+    
+    public List<Marca> marcaIndex() throws Exception {
+        return marcaDao.index();
+    }
 }

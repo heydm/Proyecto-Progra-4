@@ -8,6 +8,8 @@ import com.progra.guia.logic.Marca;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -67,5 +69,23 @@ public class MarcaDao {
         stm.setString(2, e.getNombre());
                 
         db.executeQuery(stm);
+    }
+
+    public List<Marca> index() throws SQLException {
+        List<Marca> marcas = new ArrayList<>(); 
+        String sql = "SELECT * FROM MARCA; ";
+        
+        PreparedStatement stm = db.prepareStatement(sql);
+        ResultSet rs = db.executeQuery(stm);
+        
+        while(rs.next()){
+            int id = rs.getInt("id");
+            String nombre = rs.getString("nombre");
+            
+            Marca marca = new Marca(id, nombre);
+            marcas.add(marca);
+        }
+        
+        return marcas;
     }
 }

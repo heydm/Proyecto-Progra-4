@@ -24,7 +24,7 @@ import java.sql.SQLException;
  *
  * @author joas2
  */
-@WebServlet(name = "MarcaController", urlPatterns = {"/presentation/marca/add","/presentation/marca/show"})
+@WebServlet(name = "MarcaController", urlPatterns = {"/presentation/marca/show"})
 public class Controller extends HttpServlet {
     
     /**
