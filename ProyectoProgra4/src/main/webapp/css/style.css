@@ -3,7 +3,7 @@ header{
     padding-bottom: 5px;
 }
 
-footer {
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -11,6 +11,7 @@ footer {
   background-color: rgb(42, 47, 53);
   color: black;
   text-align: center;
+  margin: 0 !important;
 }
 
 .logo>img{ 
