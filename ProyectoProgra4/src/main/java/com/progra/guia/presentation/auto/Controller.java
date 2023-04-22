@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.progra.presentation.cliente.datos;
+package com.progra.guia.presentation.auto;
 
 import com.progra.guia.logic.Cliente;
 import com.progra.guia.logic.Service;
@@ -19,45 +19,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(name = "ClienteDatosController", urlPatterns = {"/presentation/cliente/datos/show","/presentation/cliente/datos/update"})
+@WebServlet(name = "ClienteAutoController", urlPatterns = {"/presentation/auto/show","/presentation/auto/update"})
 public class Controller extends HttpServlet {
     
-  protected void processRequest(HttpServletRequest request, 
-                                HttpServletResponse response)
-         throws ServletException, IOException {
 
-        request.setAttribute("model", new Model());
-        
-        String viewUrl="";     
-        switch (request.getServletPath()) {
-          case "/presentation/cliente/datos/show":
-              viewUrl = this.show(request);
-              break;
-          case "/presentation/cliente/datos/update":
-              viewUrl = this.update(request);
-              break;              
-        }          
-        request.getRequestDispatcher(viewUrl).forward( request, response); 
-  }
 
-    public String show(HttpServletRequest request) {
-        return this.showAction(request);
-    }
-    
-    public String showAction(HttpServletRequest request) {
-        Model model = (Model) request.getAttribute("model");
-        Service service = Service.instance();
-        HttpSession session = request.getSession(true);
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
-        Cliente cliente;
-        try {
-            cliente = service.clienteFind(usuario);
-        } catch (Exception ex) { cliente=null; }
-        try {        
-            model.setCurrent(cliente);
-            return "/presentation/cliente/datos/View.jsp";
-        } catch (Exception ex) { return ""; }
-    }
+
     
     
     
@@ -125,11 +92,6 @@ public class Controller extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -139,11 +101,6 @@ public class Controller extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
     /**
      * Returns a short description of the servlet.

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.progra.presentation.auto;
+package com.progra.guia.presentation.cliente.datos;
 
 import com.progra.guia.logic.Cliente;
 import com.progra.guia.logic.Usuario;
