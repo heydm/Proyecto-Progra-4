@@ -14,7 +14,7 @@ public class Model{
     Marca current;
 
     public Model() {
-        current = new Marca(0,"");
+        current = new Marca("","");
     }
 
     public Marca getCurrent() {

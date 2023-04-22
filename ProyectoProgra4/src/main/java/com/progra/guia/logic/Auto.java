@@ -9,9 +9,9 @@ import java.util.Objects;
 public class Auto {
     String numero;
     String placa;
-    
+    private String Año;
     Marca marca;
-
+    private Modelo modelo;
     public Auto() {
 
         this("","", new Marca());

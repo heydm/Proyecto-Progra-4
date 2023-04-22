@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(name = "ClienteCuentaController", urlPatterns = {"/presentation/cliente/cuenta/show"})
+@WebServlet(name = "ClienteCuentaController", urlPatterns = {"/presentation/cliente/polizas/show"})
 public class Controller extends HttpServlet {
     
   protected void processRequest(HttpServletRequest request, 

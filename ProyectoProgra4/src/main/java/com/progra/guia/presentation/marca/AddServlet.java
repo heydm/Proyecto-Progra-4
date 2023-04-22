@@ -25,7 +25,7 @@ public class AddServlet extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String id = request.getParameter("id");
         
-        var marca = new Marca(Integer.parseInt(id), nombre);
+        var marca = new Marca(id, nombre);
         
         try {
             service.marcaCreate(marca);

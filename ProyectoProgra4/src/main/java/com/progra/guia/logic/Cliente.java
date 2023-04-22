@@ -55,6 +55,7 @@ public class Cliente {
         this.usuario = usuario;
     }
 
+    
     public List<Poliza> getPolizas() {
         return polizas;
     }

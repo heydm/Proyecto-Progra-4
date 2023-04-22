@@ -40,7 +40,7 @@ public class MarcaDao {
     public Marca from(ResultSet rs, String alias) {
         try {
             Marca e = new Marca();
-            e.setId(rs.getInt(alias + ".id"));
+            e.setId(rs.getString(alias + ".id"));
             e.setNombre(rs.getString(alias + ".clave"));         
             return e;
         } catch (SQLException ex) {
@@ -55,7 +55,7 @@ public class MarcaDao {
                 "where id=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, e.getNombre());
-        stm.setString(2, Integer.toString(e.getId()));
+        stm.setString(2, e.getId());
         int count = db.executeUpdate(stm);
         if (count == 0) {
             throw new Exception("Cliente no existe");
@@ -79,7 +79,7 @@ public class MarcaDao {
         ResultSet rs = db.executeQuery(stm);
         
         while(rs.next()){
-            int id = rs.getInt("id");
+            String id = rs.getString("id");
             String nombre = rs.getString("nombre");
             
             Marca marca = new Marca(id, nombre);
