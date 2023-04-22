@@ -9,10 +9,10 @@ package com.progra.guia.logic;
  * @author joas2
  */
 public class Marca {
-    private int id;
+    private String id;
     private String nombre;
 
-    public Marca(int id, String nombre) {
+    public Marca(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -20,11 +20,11 @@ public class Marca {
     public Marca() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -34,6 +34,27 @@ public class Marca {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Marca other = (Marca) obj;
+        return this.id == other.id;
     }
     
     
