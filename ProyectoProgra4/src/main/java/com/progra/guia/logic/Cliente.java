@@ -16,20 +16,29 @@ import java.util.Objects;
 public class Cliente {
     String cedula;
     String nombre;
+     String clave;
+     String telefono;
+    String correo;
+    Tarjeta tarjeta;
     Usuario usuario;
     List<Poliza> polizas;
 
     public Cliente() {
-        this("","",new Usuario());
+        this("","","","","",new Tarjeta(),new Usuario());
     }
 
-    public Cliente(String cedula, String nombre, Usuario usuario) {
+    public Cliente(String cedula, String nombre, String clave, String telefono, String correo, Tarjeta tarjeta, Usuario usuario) {
         this.cedula = cedula;
         this.nombre = nombre;
+        this.clave = clave;
+        this.telefono = telefono;
+        this.correo = correo;
+        this.tarjeta = tarjeta;
         this.usuario = usuario;
         this.polizas = new ArrayList();
     }
 
+  
     
     public String getCedula() {
         return cedula;

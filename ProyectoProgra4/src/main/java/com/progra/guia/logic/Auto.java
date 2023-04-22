@@ -9,21 +9,24 @@ import java.util.Objects;
 public class Auto {
     String numero;
     String placa;
-    private String Año;
+    private String anio;
     Marca marca;
     private Modelo modelo;
     public Auto() {
 
-        this("","", new Marca());
+        this("","","",new Marca(),new Modelo());
 
     }
 
-    public Auto(String numero, String placa, Marca marca) {
+    public Auto(String numero, String placa, String anio, Marca marca, Modelo modelo) {
         this.numero = numero;
         this.placa = placa;
-       
-
+        this.anio = anio;
+        this.marca = marca;
+        this.modelo = modelo;
     }
+
+   
 
     public String getNumero() {
         return numero;
