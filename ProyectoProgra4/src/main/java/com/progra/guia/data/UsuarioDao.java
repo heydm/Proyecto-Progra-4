@@ -31,7 +31,7 @@ public class UsuarioDao {
         if (rs.next()) {
             return from(rs, "e");
         } else {
-            throw new Exception("Empleado no Existe");
+            throw new Exception("Usuario no Existe");
         }
     }
     
@@ -47,3 +47,4 @@ public class UsuarioDao {
         }
     }    
  }
+ 

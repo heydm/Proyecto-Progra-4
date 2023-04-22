@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(name = "ClienteCuentaController", urlPatterns = {"/presentation/cliente/polizas/show"})
+@WebServlet(name = "ClientePolizaController", urlPatterns = {"/presentation/cliente/poliza/show"})
 public class Controller extends HttpServlet {
     
   protected void processRequest(HttpServletRequest request, 
@@ -29,7 +29,7 @@ public class Controller extends HttpServlet {
         
         String viewUrl="";     
         switch (request.getServletPath()) {
-          case "/presentation/cliente/cuenta/show":
+          case "/presentation/cliente/poliza/show":
               viewUrl = this.show(request);
               break;
         }          
