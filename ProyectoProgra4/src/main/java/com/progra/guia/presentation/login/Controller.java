@@ -38,6 +38,9 @@ public class Controller extends HttpServlet {
             case "/presentation/login/logout":
                 viewUrl=this.logout(request);
                 break;
+            case "/presentation/login/admin":
+                viewUrl=this.admin(request);
+                break;
         }
         request.getRequestDispatcher(viewUrl).forward( request, response); 
   }
@@ -89,10 +92,10 @@ public class Controller extends HttpServlet {
             String viewUrl="";
             switch(real.getTipo()){
                 case 1:
-                    viewUrl="/presentation/cliente/cuentas/show";
+                    viewUrl="/presentation/polizas/show";
                     break;
                 case 2:
-                     viewUrl="";
+                     viewUrl="/presentation/gestion/show";
                     break;             
             }
             return viewUrl;
@@ -120,12 +123,24 @@ public class Controller extends HttpServlet {
     public String show(HttpServletRequest request){
         return this.showAction(request);
     }
+    
         
     public String showAction(HttpServletRequest request){
         Model model= (Model) request.getAttribute("model");
         model.getCurrent().setCedula("");
         model.getCurrent().setClave("");
         return "/presentation/login/View.jsp"; 
+    }    
+    
+      public String admin(HttpServletRequest request){
+        return this.adminAction(request);
+    }
+    
+    public String adminAction(HttpServletRequest request){
+        Model model= (Model) request.getAttribute("model");
+        model.getCurrent().setCedula("");
+        model.getCurrent().setClave("");
+        return "/presentation/admin/View.jsp"; 
     }    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
