@@ -6,6 +6,7 @@
 package com.progra.guia.presentation.auto;
 
 import com.progra.guia.logic.Cliente;
+import com.progra.guia.logic.Tarjeta;
 import com.progra.guia.logic.Usuario;
 
 
@@ -17,9 +18,10 @@ public class Model{
     Cliente current;
 
     public Model() {
-        this.current = new Cliente("","",new Usuario("","",1));
+        this.current = new Cliente("","","","","",new Tarjeta(),new Usuario("","",1));
     }
 
+    
     
     public Cliente getCurrent() {
         return current;
