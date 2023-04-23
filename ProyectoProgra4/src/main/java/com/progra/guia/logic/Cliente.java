@@ -16,7 +16,6 @@ import java.util.Objects;
 public class Cliente {
     String cedula;
     String nombre;
-     String clave;
      String telefono;
     String correo;
     Tarjeta tarjeta;
@@ -24,13 +23,13 @@ public class Cliente {
     List<Poliza> polizas;
 
     public Cliente() {
-        this("","","","","",new Tarjeta(),new Usuario());
+        this("","","","",new Tarjeta(),new Usuario());
     }
 
-    public Cliente(String cedula, String nombre, String clave, String telefono, String correo, Tarjeta tarjeta, Usuario usuario) {
+    public Cliente(String cedula, String nombre, String telefono, String correo, Tarjeta tarjeta, Usuario usuario) {
         this.cedula = cedula;
         this.nombre = nombre;
-        this.clave = clave;
+        
         this.telefono = telefono;
         this.correo = correo;
         this.tarjeta = tarjeta;
@@ -38,13 +37,7 @@ public class Cliente {
         this.polizas = new ArrayList();
     }
 
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
+   
 
     public String getTelefono() {
         return telefono;

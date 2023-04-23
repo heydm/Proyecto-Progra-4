@@ -70,13 +70,11 @@ public class Auto {
         this.marca = marca;
     }
 
-
-
-   
-
-    
-   
-
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -89,12 +87,19 @@ public class Auto {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Poliza other = (Poliza) obj;
-        if (!Objects.equals(this.placa, other.placa)) {
-            return false;
-        }
-        return true;
+        final Auto other = (Auto) obj;
+        return Objects.equals(this.placa, other.placa);
     }
+
+
+
+   
+
+    
+   
+
+
+   
     
     
     

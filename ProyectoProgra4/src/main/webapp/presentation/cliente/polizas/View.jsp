@@ -26,17 +26,13 @@
         <table>
             <thead>
 
-                <tr> <td>Número</td> <td>Placa</td> <td>Fecha</td> </tr>
+                <tr> <td>NúmeroPoliza</td> <td>Placa</td> <td>Fecha</td> </tr>
             </thead>
             <tbody>
                         <% for(Poliza p:polizas){%>
                 <tr> <td><a href="presentation/cliente/poliza/show?numeroFld=<%=p.getNumero()%>"><%=p.getNumero()%> </td>  
-                        <td><%=p.getPlaca()%></td><td><%=p.getFecha()%></td></tr> 
-<!--                         <tr> <td><form action="/Guia/presentation/cliente/poliza/show">
-                                    <input type="hidden" name="numeroFld" value="<%=p.getNumero()%>"> 
-                                    <button class="link-button"> <%=p.getNumero()%> </button> </form> </td>  
-                            <td><%=p.getPlaca()%></td> <td><%=p.getFecha()%></td></tr>  -->              
-
+                        <td><%=p.getFecha()%></td><td><%=p.getFecha()%></td></tr> 
+<!--                         
                         <%}%>
             </tbody>
         </table>          

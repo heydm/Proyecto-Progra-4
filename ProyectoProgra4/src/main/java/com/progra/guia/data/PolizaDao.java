@@ -44,10 +44,9 @@ public class PolizaDao {
         String sql = "insert into Poliza (campo1, campo2,campo3,campo4,campo5,campo6,campo7) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, String.valueOf(e.getNumero()));
-        stm.setString(2, e.getPlaca());
+       
         stm.setString(3, e.getFecha());
-        stm.setDouble(4, e.getSaldo());
-        stm.setString(5, e.getCobertura());
+       
         //stm.setString(6, e.getMarca());
        // stm.setstring(7, e.getCliente());
 
@@ -78,10 +77,8 @@ public class PolizaDao {
         try {
             Poliza e = new Poliza();
             e.setNumero(rs.getString(alias + ".numero"));
-            e.setPlaca(rs.getString(alias + ".placa"));
-            e.setFecha(rs.getString(alias + ".fecha"));
-            e.setSaldo(rs.getDouble(alias + ".saldo"));
-            e.setCobertura(rs.getString(alias + ".cobertura"));
+           
+     
             
             return e;
         } catch (SQLException ex) {

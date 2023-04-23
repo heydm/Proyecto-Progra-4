@@ -5,39 +5,31 @@
  */
 package com.progra.guia.logic;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Poliza {
     
     String numero; 
     String fecha;
-    String placa;
-    double saldo;
-    String cobertura;
-    Marca marca;
-    Modelo modelo;
+    double precio;
+   List <Cobertura>coberturas;
     private Auto auto;
     private Cliente cliente;
-   
+
+    public Poliza(String numero, String fecha, double precio, List<Cobertura> coberturas, Auto auto, Cliente cliente) {
+        this.numero = numero;
+        this.fecha = fecha;
+        this.precio = precio;
+        this.coberturas = coberturas;
+        this.auto = auto;
+        this.cliente = cliente;
+    }
 
     public Poliza() {
-
-        this("","","",0.0,"",new Marca(),new Cliente());
-
     }
+   
 
-    public Poliza(String numero,String placa,String fecha,Double saldo,String cobertura, Marca marca, Cliente cliente) {
-        this.numero = numero;
-        this.placa = placa;
-        this.fecha = fecha;
-        this.saldo = saldo;
-        this.cobertura = cobertura;
-        this.marca = marca;
-        this.cliente = cliente;
-         
-    }
-
-    
    
     public Cliente getCliente() {
         return cliente;
@@ -64,42 +56,31 @@ public class Poliza {
         this.fecha = fecha;
     }
 
-    public String getPlaca() {
-        return placa;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public List<Cobertura> getCoberturas() {
+        return coberturas;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void setCoberturas(List<Cobertura> coberturas) {
+        this.coberturas = coberturas;
     }
 
-    public String getCobertura() {
-        return cobertura;
+    public Auto getAuto() {
+        return auto;
     }
 
-    public void setCobertura(String cobertura) {
-        this.cobertura = cobertura;
+    public void setAuto(Auto auto) {
+        this.auto = auto;
     }
 
-    public Marca getMarca() {
-        return marca;
-    }
-
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
-   
-
-    
-   
-
+ 
 
     @Override
     public boolean equals(Object obj) {
