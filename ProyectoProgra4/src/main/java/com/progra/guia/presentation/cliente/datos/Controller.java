@@ -87,6 +87,12 @@ public class Controller extends HttpServlet {
         if (request.getParameter("nombreFld").isEmpty()){
             errores.put("nombreFld","Nombre requerido");
         }
+        if (request.getParameter("telefonoFld").isEmpty()){
+            errores.put("telefonoFld","telefono requerido");
+        }
+         if (request.getParameter("correoFld").isEmpty()){
+            errores.put("correoFld","correo requerido");
+        }
         return errores;
     }
     
@@ -94,15 +100,20 @@ public class Controller extends HttpServlet {
        Model model= (Model) request.getAttribute("model");
        
         model.getCurrent().setNombre(request.getParameter("nombreFld"));
+        model.getCurrent().setTelefono(request.getParameter("telefonoFld"));
+        model.getCurrent().setCorreo(request.getParameter("correoFld"));
    }
 
         
-    public String updateAction(HttpServletRequest request) {
+    public String updateAction(HttpServletRequest request) throws Exception {
         Model model= (Model) request.getAttribute("model");
         Service  service = Service.instance();
         HttpSession session = request.getSession(true);
         Usuario usuario = (Usuario) session.getAttribute("usuario");
+       // Cliente c=service.clienteFind(usuario);
         model.getCurrent().setCedula(usuario.getCedula());
+        
+       // model.getCurrent().setTelefono(c.getTelefono());
         model.getCurrent().setUsuario(usuario);
         try {
             service.clienteUpdate(model.getCurrent());

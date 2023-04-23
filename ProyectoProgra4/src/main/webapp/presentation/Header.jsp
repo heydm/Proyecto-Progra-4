@@ -14,7 +14,7 @@
               </li>
                         <% if (usuario!=null){ %>
                 <li>
-                  <a href="presentation/cliente/cuentas/show">Polizas</a>
+                  <a href="presentation/cliente/polizas/show">Polizas</a>
                   <ul>  <!--submenu --> </ul>
                 </li>                        
                 <li >
@@ -29,6 +29,10 @@
                         <% if (usuario==null){%>
                 <li>
                   <a href="presentation/login/show">Iniciar sesión</a>
+                </li>
+                
+                <li>
+                  <a href="presentation/registrar/show">Registrarse</a>
                 </li>
                 
                         <% }%>             

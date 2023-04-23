@@ -35,7 +35,7 @@ public class ClienteDao {
             c.setUsuario(usuarioDao.from(rs,"u"));
             return c;
         } else {
-            throw new Exception("Empleado no Existe");
+            throw new Exception("Cliente no Existe");
         }
     }
     
@@ -44,6 +44,8 @@ public class ClienteDao {
             Cliente e = new Cliente();
             e.setCedula(rs.getString(alias + ".cedula"));
             e.setNombre(rs.getString(alias + ".nombre"));
+            e.setTelefono(rs.getString(alias + ".telefono"));
+            e.setCorreo(rs.getString(alias + ".correo"));
             return e;
         } catch (SQLException ex) {
             return null;
@@ -54,10 +56,14 @@ public class ClienteDao {
         String sql = "update " +
                 "Cliente " +
                 "set nombre=? " +
+                ", telefono =? " +
+                ", correo =? " +
                 "where cedula=?";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, e.getNombre());
         stm.setString(2, e.getCedula());
+        stm.setString(3, e.getTelefono());
+        stm.setString(4, e.getCorreo());
         int count = db.executeUpdate(stm);
         if (count == 0) {
             throw new Exception("Cliente no existe");

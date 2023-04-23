@@ -5,6 +5,7 @@
  */
 package com.progra.guia.logic;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,7 +26,14 @@ public class Poliza {
         this.auto = auto;
         this.cliente = cliente;
     }
-
+    public Poliza(String numero, String fecha, double precio, Auto auto, Cliente cliente) {
+        this.numero = numero;
+        this.fecha = fecha;
+        this.precio = precio;
+        this.coberturas = new ArrayList();
+        this.auto = auto;
+        this.cliente = cliente;
+    }
     public Poliza() {
     }
    

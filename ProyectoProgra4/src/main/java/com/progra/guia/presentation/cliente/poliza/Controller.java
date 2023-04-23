@@ -56,7 +56,7 @@ public class Controller extends HttpServlet {
     Map<String,String> validar(HttpServletRequest request){
         Map<String,String> errores = new HashMap<>();
         if (request.getParameter("numeroFld").isEmpty()){
-            errores.put("numeroFld","Cuenta requerida");
+            errores.put("numeroFld","poliza requerida");
         }
         return errores;
     }
@@ -75,8 +75,8 @@ public class Controller extends HttpServlet {
         try {        
             model.setCurrent(service.polizaFind(model.getCurrent().getNumero()));
             if (!(model.getCurrent().getCliente().getCedula().equals(usuario.getCedula()))) 
-                throw new Exception("Cuenta no pertenece al cliente");
-            return "/presentation/cliente/cuenta/View.jsp";
+                throw new Exception("Poliza no pertenece al cliente");
+            return "/presentation/cliente/poliza/View.jsp";
         } catch (Exception ex) {
             return "/presentation/Error.jsp";
         }

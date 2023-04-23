@@ -19,23 +19,22 @@
 <body >
 <%@ include file="/presentation/Header.jsp" %>
 
-     <h1>Agregar Auto</h1>
-    <form action="presentation/administrador/modelo/ add" method="post" enctype="multipart/form-data">
+     <div class="panel" style="width:50%;">
+        <div class="fila encabezado">Poliza</div>
+        <div class="fila">
+               <div class="etiqueta">Numero de poliza</div>
+              <div class="campo"><%=poliza.getNumero()%></div>
+        </div>
+        <div class="fila">
+          <div class="etiqueta">Fecha</div>
+          <div class="campo"><%=poliza.getFecha()%></div>
+        </div>
         
-        <label>Placa:</label>
-        <input type="text" name="id" required><br>
-        <label>Marca:</label>
-        
-        <select name="example">
-            <%
-                 if ($result->num_rows > 0) {
-          while($row = $result->fetch_assoc()) {
-            echo '<option value="' . $row["id"] . '">' . $row["marca"] . '</option>';
-          }
-        }
-            %>
-        </select>
-            </form>
+        <div class="fila">
+          <div class="etiqueta">Precio</div>
+          <div class="campo"><%=poliza.getPrecio()%></div>
+        </div>
+    </div>     
   
      <%@ include file="/presentation/Footer.jsp" %>
 </body>
