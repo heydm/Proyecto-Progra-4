@@ -39,8 +39,8 @@ public class AutoDao {
     private Auto from(ResultSet rs, String alias) {
         try {
             Auto e = new Auto();
-            e.setNumero(rs.getString(alias + ".numero"));
             e.setPlaca(rs.getString(alias + ".placa"));
+            e.setAnio(rs.getString(alias + ".anio"));
             return e;
         } catch (SQLException ex) {
             return null;

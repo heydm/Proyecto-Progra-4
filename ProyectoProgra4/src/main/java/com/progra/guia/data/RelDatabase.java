@@ -7,10 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author jsanchez
- */
+
 public class RelDatabase { 
      
     Connection cnx;
@@ -24,7 +21,7 @@ public class RelDatabase {
             String server = "localhost";
             String port = "3306";
             String user = "root";
-            String password = "root";
+            String password = "lsls0811";
             String database = "proyectop";
             
             String URL_conexion="jdbc:mysql://"+ server+":"+port+"/"+database+"?user="+user+"&password="+

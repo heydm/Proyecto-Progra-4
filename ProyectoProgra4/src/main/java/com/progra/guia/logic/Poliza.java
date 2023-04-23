@@ -10,13 +10,15 @@ import java.util.Objects;
 public class Poliza {
     
     String numero; 
-    String placa;
-    
     String fecha;
+    String placa;
     double saldo;
     String cobertura;
     Marca marca;
-    Cliente cliente;
+    Modelo modelo;
+    private Auto auto;
+    private Cliente cliente;
+   
 
     public Poliza() {
 

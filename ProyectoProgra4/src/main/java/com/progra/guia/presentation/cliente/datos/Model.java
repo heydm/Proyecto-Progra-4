@@ -18,7 +18,7 @@ public class Model{
     Cliente current;
 
     public Model() {
-        this.current = new Cliente("","","","","",new Tarjeta(),new Usuario("","",1));
+        this.current = new Cliente("","","","",new Tarjeta(),new Usuario("","",1));
     }
 
     
