@@ -44,9 +44,8 @@ public class PolizaDao {
         String sql = "insert into Poliza (campo1, campo2,campo3,campo4,campo5,campo6,campo7) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement stm = db.prepareStatement(sql);
         stm.setString(1, String.valueOf(e.getNumero()));
-       
-        stm.setString(3, e.getFecha());
-       
+        stm.setString(2, e.getFecha());
+        stm.setDouble(3, e.getPrecio());
         //stm.setString(6, e.getMarca());
        // stm.setstring(7, e.getCliente());
 

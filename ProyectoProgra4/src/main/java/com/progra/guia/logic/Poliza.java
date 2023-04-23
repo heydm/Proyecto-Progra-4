@@ -80,7 +80,9 @@ public class Poliza {
         this.auto = auto;
     }
 
- 
+   public String getPlaca() {
+        return this.auto.getPlaca();
+    }
 
     @Override
     public boolean equals(Object obj) {

@@ -26,12 +26,15 @@
         <table>
             <thead>
 
-                <tr> <td>NúmeroPoliza</td> <td>Placa</td> <td>Fecha</td> </tr>
+                <tr> <td>NúmeroPoliza</td> <td>Fecha</td> <td>Precio</td> </tr>
             </thead>
             <tbody>
                         <% for(Poliza p:polizas){%>
                 <tr> <td><a href="presentation/cliente/poliza/show?numeroFld=<%=p.getNumero()%>"><%=p.getNumero()%> </td>  
-                        <td><%=p.getFecha()%></td><td><%=p.getFecha()%></td></tr> 
+                        
+                         <td><%=p.getFecha()%></td>
+                         <td><%=p.getPrecio()%></td>
+                </tr> 
 <!--                         
                         <%}%>
             </tbody>

@@ -14,7 +14,7 @@ public class Auto {
     private Modelo modelo;
     public Auto() {
 
-        this("","",new Marca(),new Modelo());
+        //this("","",new Marca(),new Modelo());
 
     }
 
