@@ -10,7 +10,9 @@ import com.progra.guia.data.MarcaDao;
 import com.progra.guia.data.PolizaDao;
 import com.progra.guia.data.RelDatabase;
 import com.progra.guia.data.UsuarioDao;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -30,7 +32,9 @@ public class Service {
     UsuarioDao usuarioDao;
     ClienteDao clienteDao;
     PolizaDao polizaDao;
-    MarcaDao marcaDao;
+    MarcaDao marcaDao; 
+    HashMap<String,Usuario> usuarios;
+    HashMap<String,Cliente> clientes;
     
 //    HashMap<String,Usuario> usuarios;
 //    HashMap<String,Cliente> clientes;
@@ -44,6 +48,11 @@ public class Service {
         clienteDao = new ClienteDao(relDatabase);
         polizaDao = new PolizaDao(relDatabase);
         marcaDao = new MarcaDao(relDatabase);
+        
+         usuarios = new HashMap();
+          clientes = new HashMap();
+          
+        
         
 //        usuarios = new HashMap();
 //        usuarios.put("111", new Usuario("111","111",1));
@@ -98,5 +107,32 @@ public class Service {
     
     public List<Marca> marcaIndex() throws Exception {
         return marcaDao.index();
+    }
+    
+     public boolean UsuarioExistente(String cedula,String clave) throws Exception{
+        if (usuarios.get(cedula)!=null)
+            throw new Exception("Existe una cuenta creada con ese usuario");
+        else 
+            return false;
+    }
+     
+        public void cargaUsuarios(HashMap<String,Usuario> usuarios) throws SQLException{
+        List<Usuario> usuariosDB = usuarioDao.UsuariosTotal();
+        for (Usuario u: usuariosDB){
+            usuarios.put(u.getCedula(), u);
+        }
+    }
+        private void cargaClientes(HashMap<String, Cliente> clientes) throws SQLException {
+            List<Cliente> clientesDB = clienteDao.getAllClientes();
+            for (Cliente c: clientesDB){
+            clientes.put(c.getCedula(), c);
+       }
+    }
+        
+    public void agregarCliente(Cliente cliente ){
+        clientes.put(cliente.getCedula(), cliente);
+    }
+    public void agregarUsuario(Usuario usuario ){
+        usuarios.put(usuario.getCedula(), usuario);
     }
 }

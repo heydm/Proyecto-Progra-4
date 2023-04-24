@@ -8,6 +8,8 @@ import com.progra.guia.logic.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class UsuarioDao {
@@ -90,6 +92,19 @@ public class UsuarioDao {
             resultado = false;
         }
         return resultado;
+    }
+    
+     public List<Usuario> UsuariosTotal() throws SQLException {
+        String sql = "select * from Usuario e";
+        PreparedStatement stm = db.prepareStatement(sql);
+        ResultSet rs = db.executeQuery(stm);
+
+        List<Usuario> usuarios = new ArrayList<>();
+        while (rs.next()) {
+            Usuario usuario = this.from(rs, "e");
+            usuarios.add(usuario);
+        }
+        return usuarios;
     }
  }
  

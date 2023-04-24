@@ -8,7 +8,8 @@ import com.progra.guia.logic.Cliente;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author ESCINF
@@ -68,5 +69,18 @@ public class ClienteDao {
         if (count == 0) {
             throw new Exception("Cliente no existe");
         }
+    }
+
+ public List<Cliente> getAllClientes() throws SQLException{
+        String sql = "select * from Cliente e";
+        PreparedStatement stm = db.prepareStatement(sql);
+        ResultSet rs = db.executeQuery(stm);
+
+        List<Cliente> clientes = new ArrayList<>();
+        while (rs.next()) {
+            Cliente cliente = this.from(rs, "e");
+            clientes.add(cliente);
+        }
+        return clientes;
     }    
 }
